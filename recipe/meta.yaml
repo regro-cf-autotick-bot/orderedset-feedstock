@@ -1,4 +1,4 @@
-{% set version = "2.0" %}
+{% set version = "2.0.1" %}
 
 package:
   name: orderedset
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/o/orderedset/orderedset-{{ version }}.tar.gz
-  sha256: 2a1815512c95ba0bcb73856b74204d4c0998e1fa2fb8a07aec1b666929db933e
+  sha256: ee942c5bebd06d64bfa1d25ed0c40ae5fc9ee8d3d4c6ca9c73fd7a11321ec484
 
 build:
   number: 0
