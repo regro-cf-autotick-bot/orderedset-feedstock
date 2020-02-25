@@ -1,4 +1,4 @@
-{% set version = "2.0.1" %}
+{% set version = "2.0.2" %}
 
 package:
   name: orderedset
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/o/orderedset/orderedset-{{ version }}.tar.gz
-  sha256: ee942c5bebd06d64bfa1d25ed0c40ae5fc9ee8d3d4c6ca9c73fd7a11321ec484
+  sha256: 285ca273c7cdd545358b6e643160bd110117a221af7319740526b66ac1cb4bec
 
 build:
   noarch: python
-  number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -28,7 +28,7 @@ about:
   home: https://github.com/simonpercivall/orderedset
   license: BSD 3-Clause
   license_file: LICENSE
-  summary: 'An Ordered Set implementation in Cython.'
+  summary: An Ordered Set implementation in Cython.
 
 extra:
   recipe-maintainers:
