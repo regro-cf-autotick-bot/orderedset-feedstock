@@ -9,26 +9,33 @@ source:
   sha256: 285ca273c7cdd545358b6e643160bd110117a221af7319740526b66ac1cb4bec
 
 build:
-  noarch: python
   number: 0
+  skip: True  # [py<37]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
+  build:
+    - {{ compiler('c') }}
   host:
     - python
     - pip
+    - cython
   run:
     - python
 
 test:
+  requires:
+    - pip
+  commands:
+    - pip check
   imports:
     - orderedset
 
 about:
   home: https://github.com/simonpercivall/orderedset
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_file: LICENSE
-  summary: An Ordered Set implementation in Cython.
+  summary: "An Ordered Set implementation in Cython"
 
 extra:
   recipe-maintainers:
